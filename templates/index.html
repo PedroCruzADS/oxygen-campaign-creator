@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Oxygen Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="{{url_for('static', filename = 'style.css')}}" rel="stylesheet">
+</head>
+
+<body class="form-v10">
+
+    <div class="page-content">
+        <div class="form-v10-content">
+            <h1 class="h1"><b>Oxygen - Criador de campanhas</b></h1>
+            <form class="form-detail" method="post" id="myform" enctype="multipart/form-data">
+                <div class="form-left">
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <b>
+                                <p align="center">Token de acesso</p>
+                            </b>
+                            <input type="text" name="access_token" id="access_token" class="input-text"
+                                placeholder="Insira um token válido" required>
+                        </div>
+                        <div class="form-row form-row-2">
+                            <b>
+                                <p align="center">ID da conta de anúncio</p>
+                            </b>
+                            <input type="text" name="ad_account_id" id="ad_account_id" class="input-text"
+                                placeholder="ID da conta" required>
+                        </div>
+                    </div>
+                    <div class="form-left">
+                        <div class="form-group">
+                            <div class="form-row form-row-1">
+                                <b>
+                                    <p align="center">Facebook ID</p>
+                                </b>
+                                <input type="text" name="facebook_page_id" id="facebook_page_id" class="input-text"
+                                    placeholder="Insira o id da página do facebook" required>
+                            </div>
+                            <div class="form-row form-row-2">
+                                <b>
+                                    <p align="center">Instagram ID</p>
+                                </b>
+                                <input type="text" name="instagram_actor_id" id="instagram_actor_id" class="input-text"
+                                    placeholder="Insira o id da página do instagram" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row form-row-1">
+                                <b>
+                                    <p align="center">Pixel ID</p>
+                                </b>
+                                <input type="text" name="pixel_id" id="pixel_id" class="input-text"
+                                    placeholder="Insira o id do pixel do facebook" required>
+                            </div>
+                            <div class="form-row form-row-2">
+                                <b>
+                                    <p align="center">Tipo de campanha</p>
+                                </b>
+                                <select name="is_dynamic_campaign" id="is_dynamic_campaign">
+                                    <option class="option" value="false">Padrão</option>
+                                    <option class="option" value="true">Dinâmica</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row form-row-1">
+                                <b>
+                                    <p align="center">Objetivo da campanha</p>
+                                </b>
+                                <select name="objective" id="objective">
+                                    <option class="option" value="CONVERSIONS">Conversão</option>
+                                    <option class="option" value="REACH">Alcance</option>
+                                    <option class="option" value="POST_ENGAGEMENT">Engajamento</option>
+                                </select>
+                            </div>
+                            <div class="form-row form-row-2">
+                                <b>
+                                    <p align="center">Status</p>
+                                </b>
+                                <select name="status" id="status">
+                                    <option value="PAUSED">Pausada</option>
+                                    <option value="ACTIVE">Ativa</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row form-row-1">
+                                <b>
+                                    <p align="center">Orçamento diário</p>
+                                </b>
+                                <input type="text" name="daily_budget" class="daily_budget" id="daily_budget"
+                                    placeholder="Exemplo: 200 = R$ 200" required>
+                            </div>
+                            <div class="form-row form-row-2">
+                                <b>
+                                    <p align="center">Nome da campanha</p>
+                                </b>
+                                <input type="text" name="campaign_name" id="campaign_name" class="input-text"
+                                    placeholder="Exemplo: Melhores Marcas" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row form-row-1">
+                                <b>
+                                    <p align="center">Idade mínima do público</p>
+                                </b>
+                                <input type="text" name="age_min" id="age_min" class="input-text"
+                                    placeholder="Idade mínima" required>
+                            </div>
+                            <div class="form-row form-row-2">
+                                <b>
+                                    <p align="center">Idade máxima do público</p>
+                                </b>
+                                <input type="text" name="age_max" id="age_max" class="input-text"
+                                    placeholder="Idade máxima" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row form-row-1">
+                                <b>
+                                    <p align="center"> Criativo Feed 1</p>
+                                </b>
+                                <div class="box">
+                                    <div class="js--image-preview"></div>
+                                    <div class="upload-options">
+                                        <label>
+                                            <input type="file" class="image-upload" name="file" id="criativo_1"
+                                                accept="image/*" />
+                                            <p><input type="submit" value="Submit"></p>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <script src="{{url_for('static', filename='upload.js')}}"></script>
+                            <div class="form-row form-row-2">
+                                <b>
+                                    <p align="center">Criativo Feed 2</p>
+                                </b>
+                                <div class="box">
+                                    <div class="js--image-preview"></div>
+                                    <div class="upload-options">
+                                        <label>
+                                            <input type="file" class="image-upload" name="file2" id="criativo_2"
+                                                accept="image/*" />
+                                            <p><input type="submit" value="Submit"></p>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <script src="{{url_for('static', filename='upload.js')}}"></script>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row form-row-1">
+                                <b>
+                                    <p align="center"> Criativo Story 1</p>
+                                </b>
+                                <div class="box">
+                                    <div class="js--image-preview"></div>
+                                    <div class="upload-options">
+                                        <label>
+                                            <input type="file" class="image-upload" name="file3" id="story_1"
+                                                accept="image/*" />
+                                            <p><input type="submit" value="Submit"></p>
+                                        </label>
+                                    </div>
+                                </div>  
+                            </div>
+                            <script src="{{url_for('static', filename='upload.js')}}"></script>
+                            <div class="form-row form-row-2">
+                                <b>
+                                    <p align="center">Criativo Story 2</p>
+                                </b>
+                                <div class="box">
+                                    <div class="js--image-preview"></div>
+                                    <div class="upload-options">
+                                        <label>
+                                            <input type="file" class="image-upload" name="file4" id="story_2"
+                                                accept="image/*" />
+                                            <p><input type="submit" value="Submit"></p>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <script src="{{url_for('static', filename='upload.js')}}"></script>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row form-row-1">
+                                <b>
+                                    <p align="center">Título 1</p>
+                                </b>
+                                <input type="text" name="titulo_1" id="titulo_1" class="input-text"
+                                    placeholder="Insira um título para o criativo" required>
+                            </div>
+                            <div class="form-row form-row-2">
+                                <b>
+                                    <p align="center">Título 2</p>
+                                </b>
+                                <input type="text" name="titulo_2" id="titulo_2" class="input-text"
+                                    placeholder="Insira um título para o criativo" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row form-row-1">
+                                <b>
+                                    <p align="center">Descrição 1</p>
+                                </b>
+                                <p>
+                                    <textarea class="descricao" name="descricao_1" id="descricao_1" cols="20"
+                                        rows="10"></textarea>
+                                </p>
+                            </div>
+                            <div class="form-row form-row-2">
+                                <b>
+                                    <p align="center">Descrição 2</p>
+                                </b>
+                                <p>
+                                    <textarea class="descricao" name="descricao_2" id="descricao_2" cols="20"
+                                        rows="10"></textarea>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row form-row-1">
+                                <b>
+                                    <p align="center">Chamada para ação</p>
+                                </b>
+                                <select name="call_to_action" id="call_to_action">
+                                    <option class="option" value="SHOP_NOW">Comprar agora</option>
+                                    <option class="option" value="LEARN_MORE">Saiba mais</option>
+                                    <option class="option" value="GET_OFFER">Obter oferta</option>
+                                </select>
+                            </div>
+                            <div class="form-row form-row-2">
+                                <b>
+                                    <p align="center">Link de direcionamento</p>
+                                </b>
+                                <input type="text" name="link" id="link" class="input-text"
+                                    placeholder="Ex: www.oscarcalcados.com.br" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row form-row-1">
+                                <b>
+                                    <p align="left">Segmentaçoes</p>
+                                </b>
+                                <label class="container">View Content
+                                    <input type="checkbox" name="View_Content" id="View_Content" value="View_Content">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <label class="container">Add Cart
+                                    <input type="checkbox" name="Add_Cart" id="Add_Cart" value="Add_Cart">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <label class="container">Broad
+                                    <input type="checkbox" name="Broad" id="Broad" value="Broad">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <label class="container">Purchase 180d
+                                    <input type="checkbox" name="Purchase_180d" id="Purchase_180d"
+                                        value="Purchase_180d">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Lookalike
+                                    <input type="checkbox" name="Lookalike" id="Lookalike" value="Lookalike">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="form-row form-row-1">
+                                <b>
+                                    <p align="left">Região</p>
+                                </b>
+                                <label class="container">Sudeste
+                                    <input type="checkbox" name="sudeste" id="sudeste">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Sul
+                                    <input type="checkbox" name="sul" id="sul">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Norte
+                                    <input type="checkbox" name="norte" id="norte">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Nordeste
+                                    <input type="checkbox" name="nordeste" id="nordeste">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Centro-Oeste
+                                    <input type="checkbox" name="centro_oeste" id="centro_oeste">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="form-row form-row-2">
+                                <b>
+                                    <p align="left">Posicionamento</p>
+                                </b>
+                                <label class="container">Feed
+                                    <input type="checkbox" name="feed" id="feed" value="feed">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Stories
+                                    <input type="checkbox" name="story" id="story" value="story">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <div class="form-row form-row-4">
+
+                                    <b>
+                                        <p align="left">Gênero</p>
+                                    </b>
+                                    <label class="container">Masculino
+                                        <input type="checkbox" name="masculino" id="masculino" value="1">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container">Feminino
+                                        <input type="checkbox" name="feminino" id="feminino" value="2">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+
+                            </div>
+                            <div class="form-row form-row-2">
+                                <b>
+                                    <p align="left">Interesses</p>
+                                </b>
+                                <label class="container">Calçados
+                                    <input type="checkbox" name="calcados" id="calcados" value="calcados">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Roupas masculinas
+                                    <input type="checkbox" name="roupas_masculinas" id="roupas_masculinas"
+                                        value="roupas_masculinas">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Moda feminina
+                                    <input type="checkbox" name="moda_feminina" id="moda_feminina"
+                                        value="moda_feminina">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Infantil
+                                    <input type="checkbox" name="infantil" id="infantil" value="infantil">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Esportes
+                                    <input type="checkbox" name="esportes" id="esportes" value="esportes">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-submit-button">
+                            <input type="submit" value="Criar campanha">
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
