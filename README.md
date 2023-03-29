@@ -12,7 +12,9 @@ O app dá suporte para criações de campanhas de topo, meio e fundo de funil, f
 
 Você deve possuir cargo de desenvolvedor na Conta Empresarial do Meta Business, ter acesso ou criar um App, gerar um token para esse App com as permissões necessárias. Não se esqueça de modificar o código ao seu modo e gosto, visto que o padrão dele agora é dedicado ao meu propósito (Plataforma de E-commerce destinada a venda de calçados e vestuário).
 
+• Você deve possuir: Python (libs: flask, facebook_business). Recomendado criar num ambiente virtual.
 
 ## Tecnologias
 
 Foi utilizado majoritariamente Python, HTML, CSS e JavaScript integrados ao Flask (Framework Python).
+
